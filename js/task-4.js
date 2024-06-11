@@ -8,6 +8,7 @@ function addSubmit(ev) {
   const password = forms.elements.password.value.trim();
   if (email === "" || password === "") {
     alert(`All form fields must be filled in`);
+    return;
   }
   const data = {
     email: email,

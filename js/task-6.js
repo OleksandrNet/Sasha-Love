@@ -10,6 +10,10 @@ const number = document.querySelector("input");
 console.dir(number.value);
 
 function createBoxes(amount) {
+  if (isNaN(amount) || amount <= 0 || amount >= 100) {
+    return;
+  }
+
   const newBox = [];
   for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
@@ -33,5 +37,3 @@ create.addEventListener("click", () => {
 destroy.addEventListener("click", () => {
   destroyBoxes();
 });
-
-createBoxes(number.textContent);
